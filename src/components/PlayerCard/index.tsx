@@ -1,0 +1,24 @@
+import { Container, Name, Icon } from './style';
+
+import { ButtonIcon } from '@components/ButtonIcon';
+
+type Props = {
+    name: string;
+    onRemove: () => void;
+};
+
+export function PlayerCard({ name, onRemove }: Props) {
+    return (
+        <Container>
+            <Icon name="person" />
+            <Name>
+                {name}
+            </Name>
+            <ButtonIcon 
+                name='close'
+                type='SECONDARY'
+                onPress={onRemove}
+            />
+        </Container>
+    )
+}
